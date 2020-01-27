@@ -19,11 +19,11 @@ $(document).ready(function() {
             
             $.getJSON(weather,function(json){
                 $("#city").html(json.name);
-                $("#main_weather").html(json.weather[0].main);
-                $("#description_weather").html(json.weather[0].description);
-                $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
+                $("#main-weather").html(json.weather[0].main);
+                $("#description-weather").html(json.weather[0].description);
+                $("#weather-image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
                 $("#temperature").html(json.main.temp);
-                $("#pressure").html(json.main.pressure);
+                $("#wind-speed").html(json.wind.speed);
                 $("#humidity").html(json.main.humidity);
                 $("#convertToCelsius").show();
             });

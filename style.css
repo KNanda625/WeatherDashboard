@@ -3,12 +3,12 @@ body {
 }
 
 header {
-    background-color: lightcoral;
-    font-family: 'Handlee', cursive;
+    background-color: darkgray;
+    color: white;
+    font-family: 'Share', cursive;
     font-size: 400%;
     /* font-weight: bold; */
     text-align: center;
-    padding: 1%;
     border-bottom: 5px solid black;
     margin-bottom: 1%;
 }
@@ -24,9 +24,9 @@ header {
 #nav {
     background-color: #e6e6e6;
     font-family: 'Share', cursive;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    border-left: 3px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
     height: auto;
     width: auto;
     margin-top: 2%;
@@ -35,13 +35,13 @@ header {
 
 #search {
     margin-left: 5%;
-    margin-top: 40%;
+    margin-top: 5%;
 }
 
 #content {
-    background-color: #e6e6e6;
+    background-color: transparent;
     font-family: 'Share', cursive;
-    border: 3px solid black;
+    border: 1px solid black;
     height: auto;
     width: auto;
     margin-top: 2%;    
@@ -55,8 +55,8 @@ header {
 #footer {
     clear: both;
     padding: 15px;
-    background-color: lightcoral;
-    color: #666666;
+    background-color: darkgray;
+    color: white;
     text-align: center;
     border-top: 2px solid #777777;
     position: fixed;
