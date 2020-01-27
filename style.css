@@ -1,0 +1,66 @@
+body {
+    background-color: ;
+}
+
+header {
+    background-color: lightcoral;
+    font-family: 'Handlee', cursive;
+    font-size: 400%;
+    /* font-weight: bold; */
+    text-align: center;
+    padding: 1%;
+    border-bottom: 5px solid black;
+    margin-bottom: 1%;
+}
+
+ /* .container {
+    width: 100%;
+    height: 400px;
+    background-color: slategray;
+    border: 1px solid black;
+    margin-bottom: 10%;
+}  */
+
+#nav {
+    background-color: #e6e6e6;
+    font-family: 'Share', cursive;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    height: auto;
+    width: auto;
+    margin-top: 2%;
+    margin-right: 0%;
+}
+
+#search {
+    margin-left: 5%;
+    margin-top: 40%;
+}
+
+#content {
+    background-color: #e6e6e6;
+    font-family: 'Share', cursive;
+    border: 3px solid black;
+    height: auto;
+    width: auto;
+    margin-top: 2%;    
+}
+
+#weather-info {
+    margin-top: 2%;
+}
+
+
+#footer {
+    clear: both;
+    padding: 15px;
+    background-color: lightcoral;
+    color: #666666;
+    text-align: center;
+    border-top: 2px solid #777777;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+} 

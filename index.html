@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      />
+      <link href="https://fonts.googleapis.com/css?family=Handlee|Share&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>Weather Dashboard</header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3" id="nav">
+                <div id="search">
+                    <input type="text" placeholder="City">                
+                    <button type="button" class="query_btn btn btn-outline-dark btn-light">Search</button>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Zip Code">                    
+                    <button type="button" class="query_btn btn btn-outline-dark btn-light">Search</button>
+                    <br>
+                </div>
+            </div>
+            <div class="col-9" id="content">
+                <div id="weather-info">
+                    <h2>City: <span id="city"></span></h2>
+                    <h2>Main Weather: <span id="main_weather"></span></h2>
+                    <h2>Description: <span id="description_weather"></span></h2>
+                    <img id="weather_image" src="">
+                    <h2>Temperature: <span id="temperature"></span>
+                        <button class="btn btn-sm btn-outline-dark btn-light" id="convertToCelsius">Convert to Celsius</button>
+                        <button class="btn btn-sm btn-outline-dark btn-light" id="convertToFahrenheit">Convert to Fahrenheit </button>
+                    </h2>
+                    <h2>Pressure: <span id="pressure"></span></h2>
+                    <h2>Humidity: <span id="humidity"></span></h2>
+                </div>
+            </div>
+            
+          </div>        
+    </div>
+
+    <div id="footer">
+        Copyright &copy; 2019 Kauri Nanda
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
