@@ -8,7 +8,7 @@ $(document).ready(function() {
 
             if ($(this).prev().attr("placeholder") == "City") {
                 
-                var weather = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=" + appID 
+                var weather = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=" + appID 
                     +"&units=imperial";
             }     
             
