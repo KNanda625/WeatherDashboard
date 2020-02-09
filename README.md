@@ -7,6 +7,8 @@ Weather Dashboard App using OpenWeather API to get current and 5-day weather for
 
 Clone repository to local computer.
 
+	git clone https://github.com/KNanda625/WeatherDashboard.git
+
 
 ### Prerequisites
 
