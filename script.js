@@ -1,54 +1,99 @@
 $(document).ready(function() {
-    // Need to get App ID from the app site - specific to the API
+    // App ID
         var appID = "287096fa33e316cb532fd655415c2d59";
         
-        // $("#convertToCelsius").hide();
-        // $("#convertToFahrenheit").hide();
-
-        $(".query_btn").click(function(){
+        $(".submit-btn").click(function(){
             
-            var query_param = $(this).prev().val();
+            var cityName = $(this).prev().val();
 
             if ($(this).prev().attr("placeholder") == "City") {
-            var weather = "http://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&APPID=" + appID 
-                                +"&units=imperial";
-            } else if ($(this).prev().attr("placeholder") == "Zip Code") {
-                var weather = "http://api.openweathermap.org/data/2.5/weather?zip=" + query_param + "&APPID=" + appID
-                + "&units=imperial";
-            }
+                
+                var weather = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=" + appID 
+                    +"&units=imperial";
+            }     
             
             $.getJSON(weather,function(json){
-                $("#city").html(json.name);
-                $("#main-weather").html(json.weather[0].main);
-                $("#description-weather").html(json.weather[0].description);
-                $("#weather-image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
-                $("#temperature").html(json.main.temp);
-                $("#wind-speed").html(json.wind.speed);
-                $("#humidity").html(json.main.humidity);
-                $("#convertToCelsius").show();
+                $("#city").html(json.city.name);
+                $("#description-weather").html(json.list[0].weather[0].description);
+                $("#weather-image").attr("src", "http://openweathermap.org/img/w/" + json.list[0].weather[0].icon + ".png");
+                $("#temperature").html(json.list[0].main.temp);
+                $("#wind-speed").html(json.list[0].wind.speed);
+                $("#humidity").html(json.list[0].main.humidity);
+                // $("#uv-index").html(json.)
+                
+                // Day 1 
+                $("#weather-image1").attr("src", "http://openweathermap.org/img/w/" + json.list[8].weather[0].icon + ".png");
+                $("#temperature1").html(json.list[8].main.temp);
+                $("#humidity1").html(json.list[8].main.humidity);
+
+                // Day 2 
+                $("#weather-image2").attr("src", "http://openweathermap.org/img/w/" + json.list[16].weather[0].icon + ".png");
+                $("#temperature2").html(json.list[16].main.temp);
+                $("#humidity2").html(json.list[16].main.humidity);
+
+                // Day 3 
+                $("#weather-image3").attr("src", "http://openweathermap.org/img/w/" + json.list[24].weather[0].icon + ".png");
+                $("#temperature3").html(json.list[24].main.temp);
+                $("#humidity3").html(json.list[24].main.humidity);
+
+                // Day 4
+                $("#weather-image4").attr("src", "http://openweathermap.org/img/w/" + json.list[32].weather[0].icon + ".png");
+                $("#temperature4").html(json.list[32].main.temp);
+                $("#humidity4").html(json.list[32].main.humidity);
+
+                // Day 5
+                $("#weather-image5").attr("src", "http://openweathermap.org/img/w/" + json.list[39].weather[0].icon + ".png");
+                $("#temperature5").html(json.list[39].main.temp);
+                $("#humidity5").html(json.list[39].main.humidity);
             });
         });
-    
-        // Optional Code for temperature conversion
-        var fahrenheit = true;
 
-        $("#convertToCelsius").click(function() {
-            
-            if (fahrenheit) {
-                $("#temperature").text( ((($("#temperature").text() - 32) * 5) / 9).toFixed(2) );
+
+        // Adding previous searches to div
+        var citySearches = [];
+
+        function renderButtons() {
+
+            // Delete buttons before adding new ones
+            $("#past-searches").empty();
+
+            // Loop through array of cities
+            for (var i = 0; i < citySearches.length; i++) {
+
+                // Dynamically generate buttons for each city in array
+                var a = $("<button>");
+                // Add class "cities" to button
+                a.addClass("cities");
+                // Adding data attribute
+                a.attr("data-name", citySearches[i]);
+                // Provide initial button text
+                a.text(citySearches[i]);
+                // Add buttons to past searches div
+                $("#past-searches").append(a);
             }
-            fahrenheit = false;
-            $("#convertToCelsius").hide(); 
-            $("#convertToFahrenheit").show();
+        }
+
+        // This function handles events where one button is clicked
+        $("#search-btn").on("click", function(event) {
+            event.preventDefault();
+
+            // Grabs input from text box
+            var cityInput = $("#search-city").val().trim();
+
+            // Adding city from input into array
+            citySearches.push(cityInput);
+            console.log(citySearches);
+
+            // Call renderButtons function
+            renderButtons();
         });
 
-        $("#convertToFahrenheit").click(function() {
+        // Function for displaying weather info...Can't figure out how to get it to work
+        // $(document).on("click", ".cities",  ;
+
+        // renderButtons();
     
-            if (fahrenheit == false) {
-                $("#temperature").text( (($("#temperature").text() * (9/5)) + 32).toFixed(2) );
-            }
-            fahrenheit = true;
-            $("#convertToFahrenheit").hide();
-            $("#convertToCelsius").show(); 
-        });            
-    }); //ready
+
+
+
+}); 

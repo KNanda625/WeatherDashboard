@@ -1,65 +1,91 @@
-body {
-    background-color: ;
-}
+
 
 header {
-    background-color: darkgray;
+    background-color: #595959;
     color: white;
     font-family: 'Share', cursive;
-    font-size: 400%;
-    /* font-weight: bold; */
+    font-size: 300%;
     text-align: center;
-    border-bottom: 5px solid black;
-    margin-bottom: 1%;
+    border-bottom: 5px solid #404040;
 }
 
- /* .container {
-    width: 100%;
-    height: 400px;
-    background-color: slategray;
-    border: 1px solid black;
-    margin-bottom: 10%;
-}  */
+ .container {
+   width: auto;
+   height: auto;
+   margin-bottom: 5%;   
+   background-color: transparent;
+} 
 
 #nav {
-    background-color: #e6e6e6;
+    background-color: #f2f2f2;
     font-family: 'Share', cursive;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
     height: auto;
     width: auto;
     margin-top: 2%;
-    margin-right: 0%;
+    border-radius: 5px;
 }
 
 #search {
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+input {
+    border-radius: 10px;
+    padding: 1%;
+}
+
+#past-searches {
+    width: auto;
+    height: 80%;
+    background-color: transparent;
+    padding: 3%;
 }
 
 #content {
-    background-color: transparent;
+    background-color:  #fffefe;
     font-family: 'Share', cursive;
-    border: 1px solid black;
+    border-radius: 5px;
     height: auto;
     width: auto;
     margin-top: 2%;    
 }
 
-#weather-info {
-    margin-top: 2%;
+#weather-info {    
+    margin-bottom: 2%;
+    margin-left: 3%;
+    padding: 2%;
+    width: auto;
+    height: auto;
+    background-color: transparent;  
+    border-bottom: 1px solid rgb(173, 169, 169);
 }
 
+#forecast {
+    background-color: transparent;
+    margin: 1%;
+    height: auto;
+    width: auto;
+}
+
+.col {
+    border: 1px solid #1f1f7a;
+    border-radius: 10px;
+    margin: 1%;
+    background-color: #3333cc;
+    color: white;
+}
 
 #footer {
     clear: both;
     padding: 15px;
-    background-color: darkgray;
+    background-color: #595959;
     color: white;
     text-align: center;
-    border-top: 2px solid #777777;
-    position: fixed;
+    font-family: 'Share', cursive;
+    border-top: 2px solid #404040;
+    /* position: fixed; */
     left: 0;
     bottom: 0;
     width: 100%;
