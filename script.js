@@ -3,20 +3,22 @@ $(document).ready(function() {
         var appID = "287096fa33e316cb532fd655415c2d59";
         function weather_data(){
             
-            var cityName = $(this).prev().val();
+            console.log('Does this even get hit?')
+            cityName = $(this).attr("data-name")
+            console.log(cityName)
 
+            if (cityName == undefined) {
+                var cityName = $(this).prev().val();
+            } 
 
-            if ($(this).prev().attr("placeholder") == "City") {
+            console.log(cityName)
 
-                var weather = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + appID 
-                    +"&units=imperial";
-                
-                var forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=" + appID 
-                    +"&units=imperial";
-                                
-                // 
-                // http://api.openweathermap.org/data/2.5/uvi?appid=287096fa33e316cb532fd655415c2d59&lat=39.74&lon=-104.98
-            }     
+            var weather = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + appID 
+                +"&units=imperial";
+            
+            var forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=" + appID 
+                +"&units=imperial";
+  
             
             
             $.getJSON(weather,function(json){
@@ -111,9 +113,8 @@ $(document).ready(function() {
         });
 
         // Function for displaying weather info...Can't figure out how to get it to work
-        $(document).on("click", ".cities", weather_data) ;
-
-        // renderButtons();
+        $(document).on("click", ".cities", weather_data);
+        renderButtons();
     
 
 
