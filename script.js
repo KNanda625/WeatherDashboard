@@ -3,7 +3,6 @@ $(document).ready(function() {
         var appID = "287096fa33e316cb532fd655415c2d59";
         function weather_data(){
             
-            console.log('Does this even get hit?')
             cityName = $(this).attr("data-name")
             console.log(cityName)
 
@@ -34,6 +33,13 @@ $(document).ready(function() {
 
                 $.getJSON(uvIndex,function(uv_json){
                     $("#uv-index").html(uv_json.value);
+                    if (uv_json.value < 3.00) {
+                        document.getElementById("uv-index").setAttribute("style","background-color:lightgreen");
+                    } else if (uv_json.value > 3.00 & uv_json.value < 7.00) {
+                        document.getElementById("uv-index").setAttribute("style","background-color:yellow");
+                    } else {
+                        document.getElementById("uv-index").setAttribute("style","background-color:red");
+                    }
                 });
             });
 
@@ -115,8 +121,6 @@ $(document).ready(function() {
         // Function for displaying weather info...Can't figure out how to get it to work
         $(document).on("click", ".cities", weather_data);
         renderButtons();
-    
-
-
+ 
 
 }); 
