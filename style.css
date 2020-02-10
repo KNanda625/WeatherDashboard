@@ -10,8 +10,8 @@ header {
 }
 
  .container {
-   width: auto;
-   height: auto;
+   /* width: auto;
+   height: auto; */
    margin-bottom: 5%;   
    background-color: transparent;
 } 
@@ -19,8 +19,8 @@ header {
 #nav {
     background-color: #f2f2f2;
     font-family: 'Share', cursive;
-    height: auto;
-    width: auto;
+    /* height: auto;
+    width: auto; */
     margin-top: 2%;
     border-radius: 5px;
 }
@@ -38,7 +38,7 @@ input {
 
 #past-searches {
     width: auto;
-    height: 80%;
+    height: auto;
     background-color: transparent;
     padding: 3%;
 }
