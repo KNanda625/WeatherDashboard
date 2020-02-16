@@ -2,6 +2,8 @@
 
 Weather Dashboard App using OpenWeather API to get current and 5-day weather forecast for select city.
 
+https://knanda625.github.io/WeatherDashboard/
+
 
 ## Getting Started
 
